@@ -11,11 +11,13 @@ import mle_motor
 import naplo
 
 
-def build_tab_elemzes(notebook):
+def build_tab_elemzes(notebook, kepernyo_szelesseg):
+    wrap = kepernyo_szelesseg - 30
     ful = ttk.Frame(notebook)
     notebook.add(ful, text="Elemzes")
 
-    tk.Label(ful, text="Elemzes (MLE illesztes)", font=config.CIM_BETU).pack(pady=10)
+    tk.Label(ful, text="Elemzes (MLE illesztes)", font=config.CIM_BETU,
+             wraplength=wrap).pack(pady=10)
 
     def elemzes_lista_frissitese():
         csapatok = state.APP_STATE["common_reliable_teams"]
@@ -44,10 +46,11 @@ def build_tab_elemzes(notebook):
     vendeg_combo.pack(fill="x", padx=20, pady=3, ipady=4)
 
     allapot_label = tk.Label(ful, text="Eloszor frissitsd a csapatlistat.",
-                              font=config.KICSI_BETU, fg="black")
+                              font=config.KICSI_BETU, fg="black", wraplength=wrap, justify="left")
     allapot_label.pack(pady=(10, 5))
 
-    eredmeny_label = tk.Label(ful, text="", font=config.KOZEPES_BETU, fg="green", justify="left")
+    eredmeny_label = tk.Label(ful, text="", font=config.KOZEPES_BETU, fg="green",
+                               wraplength=wrap, justify="left")
     eredmeny_label.pack(pady=10)
 
     def elemzes_futtatasa():
