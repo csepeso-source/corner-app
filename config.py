@@ -5,14 +5,9 @@ FOLDER_PATH = "/storage/emulated/0/totalcorner/"
 INTERMEDIATE_LOG_PATH = FOLDER_PATH + "naplo_kozbenso.csv"
 MAIN_LOG_PATH = FOLDER_PATH + "naplo_fo.csv"
 
-# SZABALY A - szezon-szivargas kuszobok
 CONTAMINATION_GAP_THRESHOLD_DAYS = 60
 SEARCH_WINDOW_FRACTION = 0.33
-
-# SZABALY B - csapat-megbizhatosag
 MIN_MATCH_RATIO = 0.5
-
-# SZABALY C - kodolas probasorrend
 ENCODING_TRY_ORDER = ["utf-8", "utf-8-sig", "cp1250", "latin1"]
 
 COLUMN_ALIASES = {
@@ -28,15 +23,14 @@ DATE_FORMATS = [
     "%Y-%m-%d %H:%M", "%d.%m.%Y %H:%M", "%m/%d/%Y",
 ]
 
-# MLE illesztes beallitasai (ROGZITVE futtatas elott, audit szabaly 3.)
 RANDOM_SEED = 42
 N_MULTISTART = 8
 HESSIAN_EPS = 1e-4
 MIN_TEAMS_FOR_FIT = 3
 
-# GUI font- es meret-konstansok
 NAGY_BETU = ("Arial", 18)
 KOZEPES_BETU = ("Arial", 16)
 KICSI_BETU = ("Arial", 13)
 CIM_BETU = ("Arial", 20, "bold")
+TAB_BETU = ("Arial", 11)
 LISTA_SOR_SZAM = 6
