@@ -13,7 +13,7 @@ import adatbevitel
 def build_tab_adatbevitel(notebook, kepernyo_szelesseg):
     wrap = kepernyo_szelesseg - 30
     ful = ttk.Frame(notebook)
-    notebook.add(ful, text="Adatbevitel")
+    notebook.add(ful, text="Adat")
 
     tk.Label(ful, text="Adatbevitel es tisztitas", font=config.CIM_BETU,
              wraplength=wrap).pack(pady=10)
@@ -40,7 +40,8 @@ def build_tab_adatbevitel(notebook, kepernyo_szelesseg):
         else:
             allapot_label.config(text="Nincs CSV fajl a mappaban.", fg="red")
 
-    ttk.Button(ful, text="Mappa frissitese", command=mappa_frissitese).pack(fill="x", padx=20, pady=5)
+    ttk.Button(ful, text="Mappa frissitese", wraplength=wrap - 40,
+               command=mappa_frissitese).pack(fill="x", padx=20, pady=5)
 
     ttk.Label(ful, text="Elozo szezon fajl:").pack(pady=(10, 3))
     elozo_valasztott = tk.StringVar()
@@ -105,8 +106,9 @@ def build_tab_adatbevitel(notebook, kepernyo_szelesseg):
             eredmeny_label.config(text="")
             messagebox.showerror("Hiba", str(e))
 
-    tk.Button(ful, text="BEOLVASAS ES TISZTITAS", font=("Arial", 18, "bold"),
-              bg="#4CAF50", fg="white", command=beolvasas_es_tisztitas, height=1).pack(
+    tk.Button(ful, text="BEOLVASAS ES\nTISZTITAS", font=("Arial", 18, "bold"),
+              bg="#4CAF50", fg="white", command=beolvasas_es_tisztitas,
+              wraplength=wrap - 40, justify="center", height=2).pack(
         fill="x", padx=20, pady=15)
 
     return ful
