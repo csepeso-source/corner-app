@@ -14,7 +14,7 @@ import naplo
 def build_tab_elemzes(notebook, kepernyo_szelesseg):
     wrap = kepernyo_szelesseg - 30
     ful = ttk.Frame(notebook)
-    notebook.add(ful, text="Elemzes")
+    notebook.add(ful, text="Elemz")
 
     tk.Label(ful, text="Elemzes (MLE illesztes)", font=config.CIM_BETU,
              wraplength=wrap).pack(pady=10)
@@ -30,8 +30,8 @@ def build_tab_elemzes(notebook, kepernyo_szelesseg):
         vendeg_combo["values"] = csapatok
         allapot_label.config(text=f"Csapatlista frissitve ({len(csapatok)} csapat).", fg="blue")
 
-    ttk.Button(ful, text="Csapatlista frissitese", command=elemzes_lista_frissitese).pack(
-        fill="x", padx=20, pady=5)
+    ttk.Button(ful, text="Csapatlista frissitese", wraplength=wrap - 40,
+               command=elemzes_lista_frissitese).pack(fill="x", padx=20, pady=5)
 
     ttk.Label(ful, text="Hazai csapat:").pack(pady=(10, 3))
     hazai_valasztott = tk.StringVar()
@@ -121,8 +121,9 @@ def build_tab_elemzes(notebook, kepernyo_szelesseg):
             allapot_label.config(text="Hiba tortent az elemzes soran.", fg="red")
             messagebox.showerror("Hiba", str(e))
 
-    tk.Button(ful, text="ELEMZES FUTTATASA", font=("Arial", 18, "bold"),
-              bg="#2196F3", fg="white", command=elemzes_futtatasa, height=1).pack(
+    tk.Button(ful, text="ELEMZES\nFUTTATASA", font=("Arial", 18, "bold"),
+              bg="#2196F3", fg="white", command=elemzes_futtatasa,
+              wraplength=wrap - 40, justify="center", height=2).pack(
         fill="x", padx=20, pady=10)
 
     ttk.Label(ful, text="Bajnoksag (liga) neve:").pack(pady=(10, 3))
@@ -143,7 +144,8 @@ def build_tab_elemzes(notebook, kepernyo_szelesseg):
         except Exception as e:
             messagebox.showerror("Hiba", f"Mentesi hiba:\n{e}")
 
-    tk.Button(ful, text="MENTES KOZBENSO NAPLOBA", font=("Arial", 18, "bold"),
-              bg="#FF9800", fg="white", command=mentes, height=1).pack(fill="x", padx=20, pady=10)
+    tk.Button(ful, text="MENTES KOZBENSO\nNAPLOBA", font=("Arial", 18, "bold"),
+              bg="#FF9800", fg="white", command=mentes,
+              wraplength=wrap - 40, justify="center", height=2).pack(fill="x", padx=20, pady=10)
 
     return ful
