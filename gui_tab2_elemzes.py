@@ -30,8 +30,9 @@ def build_tab_elemzes(notebook, kepernyo_szelesseg):
         vendeg_combo["values"] = csapatok
         allapot_label.config(text=f"Csapatlista frissitve ({len(csapatok)} csapat).", fg="blue")
 
-    ttk.Button(ful, text="Csapatlista frissitese", wraplength=wrap - 40,
-               command=elemzes_lista_frissitese).pack(fill="x", padx=20, pady=5)
+    tk.Button(ful, text="CSAPATLISTA FRISSITESE", font=config.KOZEPES_BETU,
+              wraplength=wrap - 40, justify="center", height=2,
+              command=elemzes_lista_frissitese).pack(fill="x", padx=20, pady=5)
 
     ttk.Label(ful, text="Hazai csapat:").pack(pady=(10, 3))
     hazai_valasztott = tk.StringVar()
