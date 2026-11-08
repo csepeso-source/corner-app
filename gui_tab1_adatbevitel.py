@@ -10,12 +10,15 @@ import state
 import adatbevitel
 
 
-def build_tab_adatbevitel(notebook):
+def build_tab_adatbevitel(notebook, kepernyo_szelesseg):
+    wrap = kepernyo_szelesseg - 30
     ful = ttk.Frame(notebook)
     notebook.add(ful, text="Adatbevitel")
 
-    tk.Label(ful, text="Adatbevitel es tisztitas", font=config.CIM_BETU).pack(pady=10)
-    tk.Label(ful, text=f"Mappa: {config.FOLDER_PATH}", font=config.KICSI_BETU).pack(pady=(0, 8))
+    tk.Label(ful, text="Adatbevitel es tisztitas", font=config.CIM_BETU,
+             wraplength=wrap).pack(pady=10)
+    tk.Label(ful, text=f"Mappa: {config.FOLDER_PATH}", font=config.KICSI_BETU,
+             wraplength=wrap, justify="left").pack(pady=(0, 8))
 
     def mappa_fajlok_listazasa():
         try:
@@ -52,10 +55,11 @@ def build_tab_adatbevitel(notebook):
     jelenlegi_combo.pack(fill="x", padx=20, pady=3, ipady=4)
 
     allapot_label = tk.Label(ful, text="Nyomd meg a 'Mappa frissitese' gombot eloszor.",
-                              font=config.KICSI_BETU, fg="black")
+                              font=config.KICSI_BETU, fg="black", wraplength=wrap, justify="left")
     allapot_label.pack(pady=(10, 5))
 
-    eredmeny_label = tk.Label(ful, text="", font=config.KOZEPES_BETU, fg="green", justify="left")
+    eredmeny_label = tk.Label(ful, text="", font=config.KOZEPES_BETU, fg="green",
+                               wraplength=wrap, justify="left")
     eredmeny_label.pack(pady=10)
 
     def beolvasas_es_tisztitas():
