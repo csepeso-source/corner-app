@@ -40,8 +40,9 @@ def build_tab_adatbevitel(notebook, kepernyo_szelesseg):
         else:
             allapot_label.config(text="Nincs CSV fajl a mappaban.", fg="red")
 
-    ttk.Button(ful, text="Mappa frissitese", wraplength=wrap - 40,
-               command=mappa_frissitese).pack(fill="x", padx=20, pady=5)
+    tk.Button(ful, text="MAPPA FRISSITESE", font=config.KOZEPES_BETU,
+              wraplength=wrap - 40, justify="center", height=2,
+              command=mappa_frissitese).pack(fill="x", padx=20, pady=5)
 
     ttk.Label(ful, text="Elozo szezon fajl:").pack(pady=(10, 3))
     elozo_valasztott = tk.StringVar()
