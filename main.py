@@ -21,14 +21,14 @@ style.theme_use("default")
 style.configure("TCombobox", font=config.NAGY_BETU, padding=6)
 style.configure("TButton", font=config.NAGY_BETU, padding=8)
 style.configure("TLabel", font=config.KOZEPES_BETU)
-style.configure("TNotebook.Tab", font=config.KOZEPES_BETU, padding=(10, 6))
+style.configure("TNotebook.Tab", font=config.KICSI_BETU, padding=(6, 4))
 root.option_add("*TCombobox*Listbox.font", config.NAGY_BETU)
 
 notebook = ttk.Notebook(root)
 notebook.pack(fill="both", expand=True)
 
-build_tab_adatbevitel(notebook)
-build_tab_elemzes(notebook)
+build_tab_adatbevitel(notebook, kepernyo_szelesseg)
+build_tab_elemzes(notebook, kepernyo_szelesseg)
 
 for fulnev in ["Kozbenso naplo", "Fo naplo", "Modell teljesitmeny"]:
     placeholder_ful = ttk.Frame(notebook)
